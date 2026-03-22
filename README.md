@@ -98,15 +98,15 @@ If successful, you will see:
 
 To make the Slack MCP server available to all your projects (even when working outside the `slack-mcp` directory), you should use an **absolute path** and the `--project` flag when registering it with Gemini CLI.
 
-Run this command **once** from your terminal:
+Run this command **once** from your terminal, replacing `<PROJECT_PATH>` with the absolute path where you cloned this repository (e.g., `/home/username/git/slack-mcp`):
 
 ```bash
-gemini mcp add slack-bridge uv --project /home/count/git/slack-mcp run python /home/count/git/slack-mcp/src/slack_mcp/server.py
+gemini mcp add slack-bridge uv --project <PROJECT_PATH> run python <PROJECT_PATH>/src/slack_mcp/server.py
 ```
 
 ### Why use absolute paths?
-- **Global Availability:** By providing the full path (`/home/count/git/...`), the Gemini CLI can locate your server and its virtual environment regardless of your current directory.
-- **Environment Isolation:** The `--project` flag tells `uv` to use the environment within your `slack-mcp` folder, ensuring all dependencies are found correctly even when you are working on a different project (like `montrose`).
+- **Global Availability:** By providing the full path to the project, the Gemini CLI can locate your server and its virtual environment regardless of your current working directory.
+- **Environment Isolation:** The `--project` flag tells `uv` to use the environment within your cloned directory, ensuring all dependencies are found correctly even when you are working on a different project.
 
 ### Verifying Connection
 Navigate to any other project directory and run:
