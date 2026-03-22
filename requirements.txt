@@ -1,0 +1,3 @@
+mcp
+slack_bolt
+python-dotenv
