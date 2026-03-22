@@ -62,6 +62,25 @@ Run the MCP server locally:
 uv run python src/slack_mcp/server.py
 ```
 
+## How to Use the Tool
+Once the server is configured and running, the `ask_slack` tool becomes available to your AI agent.
+
+### Example Usage
+When you are chatting with an agent and need to ask a human on Slack for approval or input, simply ask the agent to use the tool:
+
+> **You:** "I've generated the migration script. Can you ask the team on Slack if this looks safe to apply?"
+
+The agent will then trigger the `ask_slack` tool with your message.
+
+### Tool Specification
+- **Tool Name:** `ask_slack`
+- **Argument:** `question` (string) - The message you want to send to your configured Slack channel.
+
+**What happens:**
+1. The agent calls `ask_slack(question="...")`.
+2. The server sends your message to the Slack channel defined in `SLACK_CHANNEL_ID`.
+3. You will see the message appear in your Slack channel, allowing you to reply or act accordingly.
+
 ## Verification
 If you are unsure if your configuration is correct, you can run the provided verification script:
 
