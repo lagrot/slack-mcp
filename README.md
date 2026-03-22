@@ -13,11 +13,32 @@ A lightweight, maintainable MCP server that bridges coding agent requests to a S
 ## Prerequisites
 - Python 3.10+
 - [uv](https://github.com/astral-sh/uv) (recommended) or `pip`
-- A Slack App created via the [Slack API Dashboard](https://api.slack.com/apps) with:
-  - `chat:write` scope
-  - `SLACK_BOT_TOKEN` (Bot User OAuth Token)
-  - `SLACK_SIGNING_SECRET` (from Basic Information)
-  - `SLACK_CHANNEL_ID` (ID of the channel to receive messages)
+- A Slack App created via the [Slack API Dashboard](https://api.slack.com/apps).
+
+### Finding Your Credentials
+Finding these credentials can feel like a scavenger hunt if you haven't danced with the Slack API lately. You won't find these in your regular Slack desktop app; you’ll need to head over to the Slack App Directory.
+
+#### 1. SLACK_BOT_TOKEN (xoxb-...)
+This is the "identity" of your bot.
+1. Go to your [Slack App Dashboard](https://api.slack.com/apps).
+2. Select your App.
+3. In the left-hand sidebar, click on **OAuth & Permissions**.
+4. Scroll down to the **OAuth Tokens for Your Workspace** section.
+   *Note: If you haven't installed the app to your workspace yet, you'll need to click "Install to Workspace" first to generate this token.*
+
+#### 2. SLACK_SIGNING_SECRET
+This is used to verify that requests coming to your server are actually from Slack.
+1. On that same App Dashboard, stay in the left-hand sidebar.
+2. Click on **Basic Information**.
+3. Scroll down to the **App Credentials** section.
+4. You’ll see "Signing Secret" there. Click **Show** to reveal it.
+
+#### 3. SLACK_CHANNEL_ID (C...)
+This is the unique ID for the specific channel where your bot will be hanging out.
+1. Open the Slack Desktop App.
+2. Right-click on the channel name in the sidebar.
+3. Select **View channel details**.
+4. Scroll to the very bottom of the pop-up window. You will see the Channel ID (it usually starts with a C or G).
 
 ## Getting Started
 
