@@ -118,6 +118,7 @@ gemini mcp list
 You should see `slack-bridge` listed as **🟢 Connected**.
 
 
-## Development & Maintenance
-- **Linting/Formatting:** `uv run ruff check . --fix`
-- **Testing:** `uv run pytest tests/`
+## 📄 License
+
+This project is licensed under the GPL-3.0 License. See the [LICENSE](LICENSE) file for details.
+
